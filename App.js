@@ -78,6 +78,13 @@ export default class App extends Component<{}> {
          //});
      });
    }
+   
+   
+    /*自定义点击处理方法*/
+	onPressAction(data){
+		alert(data.cnname);
+	}
+	
 
    /*render()方法用于渲染组件*/
    render() { 
@@ -87,7 +94,7 @@ export default class App extends Component<{}> {
 					   dataSource={this.state.cities}
                        renderRow={(rowData) => 
 						   <View style={styles.listItem} >
-							  <Text>{rowData.cnname}</Text>
+							  <Text onPress={()=>this.onPressAction(rowData)} > {rowData.cnname} </Text>
 						  </View>
 					   }
                    />
